@@ -5,6 +5,8 @@ class voto
  	public $dni;
   	public $candidato;
   	public $provincia;
+  	public $localidad;
+  	public $direccion;
   	public $sexo;
 
   	public static function TraerVotos()
@@ -18,10 +20,12 @@ class voto
   	public function InsertarVoto()
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-		$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni,provincia,candidato,sexo) values(:dni,:provincia,:candidato,:sexo)");
-		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL InsertarVoto( :dni, :provincia, :presidente, :sexo)");
+		//$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni,provincia,candidato,sexo) values(:dni,:provincia,:candidato,:sexo)");
+		$consulta =$objetoAccesoDato->RetornarConsulta("CALL InsertarVoto( :dni, :provincia, :localidad, :direccion, :candidato, :sexo)");
 		$consulta->bindValue(':dni',$this->dni, PDO::PARAM_INT);
 		$consulta->bindValue(':provincia', $this->provincia, PDO::PARAM_STR);
+		$consulta->bindValue(':localidad', $this->localidad, PDO::PARAM_STR);
+		$consulta->bindValue(':direccion', $this->direccion, PDO::PARAM_STR);
 		$consulta->bindValue(':candidato', $this->candidato, PDO::PARAM_STR);
 		$consulta->bindValue(':sexo', $this->sexo, PDO::PARAM_STR);
 		$consulta->execute();		
@@ -40,11 +44,15 @@ class voto
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		$consulta =$objetoAccesoDato->RetornarConsulta("update votos set
 			provincia=:provincia,
+			localidad=:localidad,
+			direccion=:direccion,
 			candidato=:candidato,
 			sexo=:sexo
 			WHERE id=:id");
 		$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
 		$consulta->bindValue(':provincia',$this->titulo, PDO::PARAM_INT);
+		$consulta->bindValue(':localidad', $this->provincia, PDO::PARAM_STR);
+		$consulta->bindValue(':direccion', $this->provincia, PDO::PARAM_STR);
 		$consulta->bindValue(':candidato', $this->año, PDO::PARAM_STR);
 		$consulta->bindValue(':sexo', $this->cantante, PDO::PARAM_STR);
 	 }

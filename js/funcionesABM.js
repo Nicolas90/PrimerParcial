@@ -1,6 +1,8 @@
 function GuardarVoto()
 {
 		var provincia=$("#provincia").val();
+		var localidad=$("#localidad").val();
+		var direccion=$("#direccion").val();
 		var candidato=$("#candidato").val();
 		var sexo=$("#sexo").val();
 
@@ -10,6 +12,8 @@ function GuardarVoto()
 		data:{
 			queHacer:"GuardarVoto",
 			provincia:provincia,
+			localidad:localidad,
+			direccion:direccion,
 			candidato:candidato,
 			sexo:sexo	
 		}

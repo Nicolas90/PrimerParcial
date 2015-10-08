@@ -15,6 +15,13 @@ if(isset($_SESSION['registrado']))
         <label for="provincia" class="sr-only">Provincia</label>
         <input type="text" id="provincia" name="provincia" title="Ingrese la provincia donde recide" class="form-control" placeholder="Provincia" required="" autofocus="">
         
+        <label for="localidad" class="sr-only">Localidad</label>
+        <input type="text" id="localidad" name="localidad" title="Ingrese la localidad donde recide" class="form-control" placeholder="Localidad" required="" autofocus="">
+        
+        <label for="direccion" class="sr-only">Direccion</label>
+        <input type="text" id="direccion" name="direccion" title="Ingrese la direccion donde recide" class="form-control" placeholder="Direccion" required="" autofocus="">
+        
+
         <label for="candidato" class="sr-only">Candidato</label>
         <select id="candidato" name="candidato" class="form-control">
           <option value="Scioli">Scioli</option>

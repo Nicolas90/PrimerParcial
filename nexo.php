@@ -17,6 +17,12 @@ switch ($queHago) {
 	case 'MostrarVotos':
 			include("partes/formVotos.php");
 		break;
+
+	case 'VerEnMapa':
+			include("partes/formMapa.php");
+		break;
+
+
 	case 'GuardarVoto':
 			session_start();
 
@@ -24,6 +30,8 @@ switch ($queHago) {
 			$voto->dni=$_SESSION['registrado'];
 			$voto->candidato=$_POST['candidato'];
 			$voto->provincia=$_POST['provincia'];
+			$voto->localidad=$_POST['localidad'];
+			$voto->direccion=$_POST['direccion'];
 			$voto->sexo=$_POST['sexo'];
 
 			$voto->InsertarVoto();
@@ -42,6 +50,8 @@ switch ($queHago) {
 			$voto->id=$_POST['id'];
 			$voto->candidato=$_POST['candidato'];
 			$voto->provincia=$_POST['provincia'];
+			$voto->localidad=$_POST['localidad'];
+			$voto->direccion=$_POST['direccion'];
 			$voto->sexo=$_POST['sexo'];
 
 			$voto->ModificarVoto();

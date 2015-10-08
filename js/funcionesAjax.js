@@ -7,6 +7,7 @@ function MostrarLogin()
 	});
 	funcionAjax.done(function(retorno){
 		$("#principal").html(retorno);
+		$("#botonesABM").html("");
 	});
 	funcionAjax.fail(function(retorno){
 		$("#botonesVotacion").html(":(");	
@@ -27,6 +28,7 @@ function MostrarVotoAlta()
 	});
 	funcionAjax.done(function(retorno){
 		$("#principal").html(retorno);
+		$("#botonesABM").html("");
 	});
 	funcionAjax.fail(function(retorno){
 		$("#botonesVotacion").html(":(");
@@ -42,6 +44,7 @@ function MostrarVotos()
 	});
 	funcionAjax.done(function(retorno){
 		$("#principal").html(retorno);
+		$("#botonesABM").html("");
 	});
 	funcionAjax.fail(function(retorno){
 		$("#botonesVotacion").html(":(");

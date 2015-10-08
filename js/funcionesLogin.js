@@ -14,7 +14,8 @@ function validarLogin()
 
 	funcionAjax.done(function(retorno){
 			if(retorno!="No-esta"){	
-				MostrarBotones();
+				//MostrarBotones();
+				$("#botonesABM").html("");
 				MostrarLogin();
 
 				$("#BotonLogin").html("Ir a salir<br>-Sesión-");
@@ -37,7 +38,8 @@ function deslogear()
 		type:"post"		
 	});
 	funcionAjax.done(function(retorno){
-			MostrarBotones();
+			//MostrarBotones();
+			$("#botonesABM").html("");
 			MostrarLogin();
 			$("#usuario").val("Sin usuario.");
 			$("#BotonLogin").html("Login<br>-Sesión-");

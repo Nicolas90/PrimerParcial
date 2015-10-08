@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarVoto`(IN `dn` INT, IN `prov` VARCHAR(20), IN `can` VARCHAR(20), IN `se` VARCHAR(10))
+    NO SQL
+    DETERMINISTIC
+INSERT into votos (dni,provincia,candidato,sexo) values(dn,prov,can,se)
