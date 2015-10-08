@@ -38,15 +38,15 @@ class voto
 	 public function ModificarVoto()
 	 {
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-		$consulta =$objetoAccesoDato->RetornarConsulta("update cds set
+		$consulta =$objetoAccesoDato->RetornarConsulta("update votos set
 			provincia=:provincia,
 			candidato=:candidato,
 			sexo=:sexo
 			WHERE id=:id");
 		$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
-		$consulta->bindValue(':titulo',$this->titulo, PDO::PARAM_INT);
-		$consulta->bindValue(':anio', $this->año, PDO::PARAM_STR);
-		$consulta->bindValue(':cantante', $this->cantante, PDO::PARAM_STR);
+		$consulta->bindValue(':provincia',$this->titulo, PDO::PARAM_INT);
+		$consulta->bindValue(':candidato', $this->año, PDO::PARAM_STR);
+		$consulta->bindValue(':sexo', $this->cantante, PDO::PARAM_STR);
 	 }
 }
 ?>

@@ -16,6 +16,7 @@ function GuardarVoto()
 		});
 		funcionAjax.done(function(retorno){
 				Mostrar("MostrarLogin");
+				$("#botonesABM").html("");
 		});
 		funcionAjax.fail(function(retorno){	
 			alert("ERROR");

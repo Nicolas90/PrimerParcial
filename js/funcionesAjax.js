@@ -1,6 +1,5 @@
 function MostrarLogin()
 {
-		//alert(queMostrar);	
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -20,8 +19,7 @@ function MostrarLogin()
 }
 
 function MostrarVotoAlta()
-{
-		//alert(queMostrar);	
+{	
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -33,16 +31,10 @@ function MostrarVotoAlta()
 	funcionAjax.fail(function(retorno){
 		$("#botonesVotacion").html(":(");
 	});
-
-	funcionAjax.always(function(retorno){
-		//alert("siempre "+retorno.statusText);
-
-	});
 }
 
 function MostrarVotos()
-{
-		//alert(queMostrar);	
+{	
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -53,11 +45,6 @@ function MostrarVotos()
 	});
 	funcionAjax.fail(function(retorno){
 		$("#botonesVotacion").html(":(");
-	});
-
-	funcionAjax.always(function(retorno){
-		//alert("siempre "+retorno.statusText);
-
 	});
 }
 
@@ -74,9 +61,5 @@ function Mostrar(queMostrar)
 	});
 	funcionAjax.fail(function(retorno){
 		$("#principal").html(":(");
-	});
-	funcionAjax.always(function(retorno){
-		//alert("siempre "+retorno.statusText);
-
 	});
 }

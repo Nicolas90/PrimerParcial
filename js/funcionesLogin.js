@@ -1,10 +1,7 @@
 function validarLogin()
 {
-		var varUsuario=$("#dni").val();
-		var recordar=$("#recordarme").is(':checked');
-		
-//$("#contador").html("<img src='imagenes/ajax-loader.gif' style='width: 30px;'/>");
-	
+	var varUsuario=$("#dni").val();
+	var recordar=$("#recordarme").is(':checked');
 
 	var funcionAjax=$.ajax({
 		url:"php/validarUsuario.php",
@@ -15,9 +12,7 @@ function validarLogin()
 		}
 	});
 
-
 	funcionAjax.done(function(retorno){
-		//alert(retorno);
 			if(retorno!="No-esta"){	
 				MostrarBotones();
 				MostrarLogin();
@@ -33,7 +28,6 @@ function validarLogin()
 	funcionAjax.fail(function(retorno){
 		$("#botonesABM").html(":(");	
 	});
-	
 }
 
 function deslogear()
@@ -52,8 +46,9 @@ function deslogear()
 			
 	});	
 }
+
 function MostrarBotones()
-{		//alert(queMostrar);
+{
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",

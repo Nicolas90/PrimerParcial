@@ -34,14 +34,17 @@ switch ($queHago) {
 	case 'BorrarVoto':
 			$voto = new voto();
 			$voto->id=$_POST['id'];
+
 			$voto->BorrarVoto();
 		break;
 	case 'ModificarVoto':
-		///////////////////////////////////////////////////////////////////////
+			$voto = new voto();
+			$voto->id=$_POST['id'];
+			$voto->candidato=$_POST['candidato'];
+			$voto->provincia=$_POST['provincia'];
+			$voto->sexo=$_POST['sexo'];
 
-
-
-
+			$voto->ModificarVoto();
 		break;
 	default:
 		# code...
