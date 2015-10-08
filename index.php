@@ -39,8 +39,8 @@
 		<nav>
 			<ul id="main-nav" class="clearfix">
 				<li><a onclick="MostrarLogin()" class="btn" id="BotonLogin">Ingreso</a></li>
-				<li><a onclick="" class="btn">Ir a VOTACIÓN</a> </li>
-				<li><a onclick="" class="btn">Listado de Votaciones</a> </li>
+				<li><a onclick="MostrarVotoAlta()" class="btn">Ir a VOTACIÓN</a> </li>
+				<li><a onclick="MostrarVotos()" class="btn">Listado de Votaciones</a> </li>
 				
 			</ul>
 			<!-- /#main-nav --> 

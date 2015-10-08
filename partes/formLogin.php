@@ -13,7 +13,7 @@ if(!isset($_SESSION['registrado']))
       <form  class="form-ingreso " onsubmit="validarLogin();return false;">
         <h2 class="form-ingreso-heading">Ingrese sus datos</h2>
         <label for="dni" class="sr-only">DNI</label>
-          <input type="text" id="dni" class="form-control" placeholder="DNI" required="" autofocus="" value="<?php  if(isset($_COOKIE["registro"])){echo $_COOKIE["registro"];}?>">
+          <input type="number" id="dni" class="form-control" placeholder="DNI" required="" autofocus="" value="<?php  if(isset($_COOKIE["registro"])){echo $_COOKIE["registro"];}?>">
         
         <div class="checkbox">
           <label>

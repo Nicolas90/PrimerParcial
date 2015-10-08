@@ -27,17 +27,14 @@ function validarLogin()
 				$("#usuario").val("usuario: "+retorno);
 			}else
 			{
-				$("#contador").html("usuario o clave incorrecta");	
 				$("#formLogin").addClass("animated bounceInLeft");
 			}
 	});
 	funcionAjax.fail(function(retorno){
-		$("#botonesABM").html(":(");
-		$("#contador").html(retorno.responseText);	
+		$("#botonesABM").html(":(");	
 	});
 	
 }
-
 
 function deslogear()
 {	
@@ -64,6 +61,5 @@ function MostrarBotones()
 	});
 	funcionAjax.done(function(retorno){
 		$("#botonesABM").html(retorno);
-		//$("#informe").html("Correcto BOTONES!!!");	
 	});
 }

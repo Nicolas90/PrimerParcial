@@ -1,11 +1,32 @@
 <?php
-class cd
+class voto
 {
 	public $id;
  	public $dni;
   	public $candidato;
   	public $provincia;
   	public $sexo;
+
+  	public static function TraerTodosLosVotos()
+	{
+			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+			$consulta =$objetoAccesoDato->RetornarConsulta("select * from votos");
+			$consulta->execute();			
+			return $consulta->fetchAll(PDO::FETCH_CLASS, "voto");		
+	}
+
+  	public function GuardarVoto()
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni,provincia,candidato,sexo) values(:dni,:provincia,:candidato,:sexo)");
+		//$consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
+		$consulta->bindValue(':dni',$this->dni, PDO::PARAM_INT);
+		$consulta->bindValue(':provincia', $this->provincia, PDO::PARAM_STR);
+		$consulta->bindValue(':candidato', $this->candidato, PDO::PARAM_STR);
+		$consulta->bindValue(':sexo', $this->sexo, PDO::PARAM_STR);
+		$consulta->execute();		
+		//return $objetoAccesoDato->RetornarUltimoIdInsertado();
+	}
 
   	public function BorrarVoto()
 	 {
@@ -98,14 +119,6 @@ class cd
 
 	 }
 
-
-  	public static function TraerTodoLosCds()
-	{
-			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("select id,titel as titulo, interpret as cantante,jahr as año from cds");
-			$consulta->execute();			
-			return $consulta->fetchAll(PDO::FETCH_CLASS, "cd");		
-	}
 
 	public static function TraerUnCd($id) 
 	{

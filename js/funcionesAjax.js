@@ -1,6 +1,5 @@
 function MostrarLogin()
 {
-
 		//alert(queMostrar);	
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
@@ -9,13 +8,73 @@ function MostrarLogin()
 	});
 	funcionAjax.done(function(retorno){
 		$("#principal").html(retorno);
-		$("#contador").html("Correcto Form login!!!");	
 	});
 	funcionAjax.fail(function(retorno){
-		$("#botonesABM").html(":(");
-		$("#contador").html(retorno.responseText);	
+		$("#botonesVotacion").html(":(");	
 	});
 
+	funcionAjax.always(function(retorno){
+		//alert("siempre "+retorno.statusText);
+
+	});
+}
+
+function MostrarVotoAlta()
+{
+		//alert(queMostrar);	
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{queHacer:"MostrarVotoAlta"}
+	});
+	funcionAjax.done(function(retorno){
+		$("#principal").html(retorno);
+	});
+	funcionAjax.fail(function(retorno){
+		$("#botonesVotacion").html(":(");
+	});
+
+	funcionAjax.always(function(retorno){
+		//alert("siempre "+retorno.statusText);
+
+	});
+}
+
+function MostrarVotos()
+{
+		//alert(queMostrar);	
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{queHacer:"MostrarVotos"}
+	});
+	funcionAjax.done(function(retorno){
+		$("#principal").html(retorno);
+	});
+	funcionAjax.fail(function(retorno){
+		$("#botonesVotacion").html(":(");
+	});
+
+	funcionAjax.always(function(retorno){
+		//alert("siempre "+retorno.statusText);
+
+	});
+}
+
+function Mostrar(queMostrar)
+{
+		//alert(queMostrar);
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{queHacer:queMostrar}
+	});
+	funcionAjax.done(function(retorno){
+		$("#principal").html(retorno);
+	});
+	funcionAjax.fail(function(retorno){
+		$("#principal").html(":(");
+	});
 	funcionAjax.always(function(retorno){
 		//alert("siempre "+retorno.statusText);
 
