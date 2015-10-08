@@ -4,7 +4,7 @@ if(isset($_SESSION['registrado']))
 {
 	require_once("clases/AccesoDatos.php");
 	require_once("clases/voto.php");
-	$arrayDeVotos=voto::TraerTodosLosVotos();
+	$arrayDeVotos=voto::TraerVotos();
 
 	echo "<h2> Bienvenido: ". $_SESSION['registrado']."</h2>";
 

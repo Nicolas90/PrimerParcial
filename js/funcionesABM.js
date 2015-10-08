@@ -1,13 +1,8 @@
 function GuardarVoto()
 {
-	/*
 		var provincia=$("#provincia").val();
 		var candidato=$("#candidato").val();
 		var sexo=$("#sexo").val();
-	*/
-		var provincia = document.getElementById("provincia").value;
-		var candidato = document.getElementById("candidato").value;
-		var sexo = document.getElementById("sexo").value;
 
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
@@ -20,57 +15,55 @@ function GuardarVoto()
 		}
 		});
 		funcionAjax.done(function(retorno){
-				Mostrar("MostrarVotos");
+				Mostrar("MostrarLogin");
 		});
 		funcionAjax.fail(function(retorno){	
-				Mostrar("MostrarVotos");
-				//$("#contador").html(":(");	
-		});
-
+			alert("ERROR");
+		});	
 }
 
-/*
-function BorrarCD(idParametro)
+function BorrarVoto(idParametro)
 {
-	//alert(idParametro);
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
-			queHacer:"BorrarCD",
+			queHacer:"BorrarVoto",
 			id:idParametro	
 		}
 	});
 	funcionAjax.done(function(retorno){
-		Mostrar("MostrarGrilla");
-		$("#informe").html("cantidad de eliminados "+ retorno);	
-		
+			Mostrar("MostrarVotos");	
 	});
 	funcionAjax.fail(function(retorno){	
-		$("#informe").html(retorno.responseText);	
+			alert("ERROR");
 	});	
 }
 
-function EditarCD(idParametro)
+function EditarVoto(idParametro)
 {
+	/*
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
-			queHacer:"TraerCD",
+			queHacer:"TraerVoto",
 			id:idParametro	
 		}
 	});
 	funcionAjax.done(function(retorno){
-		var cd =JSON.parse(retorno);	
-		$("#idCD").val(cd.id);
-		$("#cantante").val(cd.cantante);
-		$("#titulo").val(cd.titulo);
-		$("#anio").val(cd.año);
+		//var voto =JSON.parse(retorno);	
+		//$("#id").val(cd.id);
+		Mostrar("MostrarVotoAlta")
+
+		$("#provincia").val(voto.provincia);
+		$("#candidato").val(voto.candidato);
+		$("#sexo").val(voto.sexo);
 	});
 	funcionAjax.fail(function(retorno){	
-		$("#informe").html(retorno.responseText);	
+			alert("ERROR");
 	});	
-	Mostrar("MostrarFormAlta");
+	
+	*/
+	//Mostrar("MostrarVotos");
 }
-*/

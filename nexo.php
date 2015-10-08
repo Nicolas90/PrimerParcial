@@ -20,46 +20,29 @@ switch ($queHago) {
 	case 'GuardarVoto':
 			session_start();
 
-			echo $_SESSION['registrado'];
-			
-			/*
 			$voto = new voto();
 			$voto->dni=$_SESSION['registrado'];
 			$voto->candidato=$_POST['candidato'];
 			$voto->provincia=$_POST['provincia'];
 			$voto->sexo=$_POST['sexo'];
 
-			$voto->GuardarVoto();
-			*/
-			
-			//$cantidad=$voto->GuardarVoto();
+			$voto->InsertarVoto();
 
-			//echo $cantidad;
+			$_SESSION['registrado']=null;
+			session_destroy();
+		break;
+	case 'BorrarVoto':
+			$voto = new voto();
+			$voto->id=$_POST['id'];
+			$voto->BorrarVoto();
+		break;
+	case 'ModificarVoto':
+		///////////////////////////////////////////////////////////////////////
 
 
-			//session_start();
 
-			//	$_SESSION['registrado']=null;
-
-			//session_destroy();
 
 		break;
-
-	/*
-		
-	case 'BorrarCD':
-			$cd = new cd();
-			$cd->id=$_POST['id'];
-			$cantidad=$cd->BorrarCd();
-			echo $cantidad;
-
-		break;
-	case 'TraerCD':
-			$cd = cd::TraerUnCd($_POST['id']);		
-			echo json_encode($cd) ;
-
-		break;	
-	*/
 	default:
 		# code...
 		break;
